@@ -1,0 +1,128 @@
+@startuml ejercicio-b1
+class Teclado
+class Tecla
+Teclado *-- "105" Tecla  
+@enduml
+
+@startuml ejercicio-b2
+class Estudiante
+class Empleado
+class Profesor
+class Persona1
+Persona1 <|-- Estudiante
+Persona1 <|-- Profesor
+Persona1 <|-- Empleado
+@enduml
+
+@startuml ejercicio-b3
+class Disco
+class Pista
+class Sector
+Pista *--  Sector
+Disco *-- Pista
+@enduml
+
+@startuml ejercicio-b4
+class Triangulo{
+-ladoA
+-ladoB
+-ladoC
+}
+class Poligono
+class Lado
+Poligono <|-- Triangulo
+Poligono *-- Lado 
+Triangulo "1" -- "3" Lado
+@enduml
+
+@startuml ejercicio-b5
+class Equipo_baseball
+class Jugador
+class Estadio
+
+Equipo_baseball "1" *--  "many" Jugador
+Equipo_baseball "1" o-- "1" Estadio
+
+@enduml
+
+@startuml ejercicio-b6
+class Comite
+class Persona
+class Coordinador
+
+Persona <|-- Coordinador
+Comite "1" *--  "2-many" Persona 
+Coordinador "1" -- "many" Comite
+@enduml
+
+@startuml ejercicio-b7
+class Caracterizacion
+class Criterio
+class Elemento_clasificado
+Caracterizacion "1" *--  "1-many" Criterio
+Elemento_clasificado "1" -- "1" Caracterizacion 
+@enduml
+
+
+@startuml ejercicio-8b
+class Laboratorio
+class Equipo
+class Laboratorio_nuclear
+class Equipo_nuclear
+Laboratorio <|-- Laboratorio_nuclear
+Equipo "many" -- "1" Laboratorio
+Laboratorio_nuclear "1" -- "many" Equipo_nuclear
+Equipo <|-- Equipo_nuclear
+@enduml
+
+
+@startuml ejercicio-9b
+class Operando
+class UFC
+class TCF
+class Ecuacion_FP
+class Subfactor_complejidad_Fi
+Operando "1"-- "1"UFC
+Operando "1"--"1" TCF
+Ecuacion_FP  *-- Operando
+TCF  *-- "14" Subfactor_complejidad_Fi
+@enduml
+
+@startuml ejercicio-10b
+
+class TEG
+class TGM
+class Trabajo_inv
+class Persona_2
+class Estudiante_post
+class Estudiante_pre
+class Profesor_
+Persona_2 <|-- Estudiante_post
+Persona_2 <|-- Estudiante_pre
+Persona_2 <|-- Profesor_
+Trabajo_inv <|-- TEG
+Trabajo_inv <|-- TGM
+Profesor_ "1-2" -- "1-many"Trabajo_inv 
+TGM "1" *-- "1" Estudiante_post
+TEG "1" *-- "1-2" Estudiante_pre
+@enduml
+
+
+@startuml ejercicio-b11
+class Documento_gra
+class Hoja
+Documento_gra *-- "many" Hoja
+class Obj_dibujo
+Hoja "1" *-- "1"Obj_dibujo
+class Texto
+class Fig_2d
+class grupo
+Obj_dibujo -- Texto
+Obj_dibujo -- Fig_2d
+grupo "1" -- "2-many" Obj_dibujo
+class Circulo
+class Cuadrado
+Fig_2d <|-- Circulo
+Fig_2d <|-- Cuadrado
+@enduml
+ 
