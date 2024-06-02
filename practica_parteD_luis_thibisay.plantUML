@@ -1,0 +1,20 @@
+@startuml parteD
+
+object "Var_x : variable" as Vx
+object "Var_y : variable" as Vy
+object "Ex1 : expresion" as Ex1{
+valor = "+"
+valor = "/"
+}
+object "C1 : constante" as C1 {
+valor = 3
+valor = 2
+}
+object "T1 : termino" as T1 
+
+T1 "tiene"-- C1
+T1 "tiene"-- Vx
+T1 "tiene"-- Vy
+Ex1 "tiene" -- "1...many" T1
+
+@enduml
