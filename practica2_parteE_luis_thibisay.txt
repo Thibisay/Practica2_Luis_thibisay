@@ -1,0 +1,15 @@
+1.R: Significa que el paquete controllers le va a suministrar herramientas para que top compla su funcion
+
+-----------------------------------------------------
+
+2.R:  Los paquetes que tiene de dependencia Threads son  3
+
+Dependencia de entrada : 3
+Dependencia de salidas: 3
+
+El funcionamiento no sera el mismo o simplemente no pudiera funcionar el programa o sistema
+
+-----------------------------------------------------
+
+3.R:  es de alto acoplamiento y esto trae como desventaja, las dependencias entre paquetes son extensas, 
+la interacción entre paquetes puede ser compleja y difícil de entender, por lo que puede llegar a ser malo.
