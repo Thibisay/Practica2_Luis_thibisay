@@ -1,0 +1,46 @@
+@startuml
+class poligono
+class punto
+
+poligono *-- "3..." punto
+
+object "T1 : poligono" as Triangulo1
+object "L1 : Punto" as Punto1
+object "L2 : Punto" as Punto2
+object "L3 : Punto" as Punto3
+object "T2 : poligono" as Triangulo2
+object "L4 : Punto" as Punto4
+object "L5 : Punto" as Punto5
+object "Tn : poligono" as Triangulo3
+
+Triangulo1 -- Punto1
+Triangulo1 -- Punto2
+Triangulo1 -- Punto3
+Triangulo2 -- Punto4
+Triangulo2 -- Punto2
+Triangulo2 -- Punto5
+Triangulo3 -- "many" Punto2
+
+object "C1 : poligono" as Cuadrado1
+object "Lc1 : Punto" as Lc1 {
+x = 0
+y = 0
+}
+object "Lc2 : Punto" as Lc2{
+x = 1
+y = 0
+}
+object "Lc3 : Punto" as Lc3{
+x = 0
+y = 1
+}
+object "Lc4 : Punto" as Lc4{
+x = 1
+y = 1
+}
+
+Cuadrado1 -- Lc1
+Cuadrado1 -- Lc2
+Cuadrado1 -- Lc3
+Cuadrado1 -- Lc4
+@enduml
