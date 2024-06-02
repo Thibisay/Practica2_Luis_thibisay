@@ -1,0 +1,114 @@
+@startuml Diagrama de clases
+
+class Persona{
+-Telefono
+-Nombre
+-Direccion
+}
+class Jugador{
+-Numero
+-Posicion
+}
+class Entrenador{
+-Años de exp
+-Acreditacion
+}
+
+Persona <|-- Jugador
+Persona <|-- Entrenador
+
+class Equipo{
+-Nombre
+-Registro
+-Capitan
+}
+
+Equipo -- "6...20" Jugador
+
+class Juego{
+-Localidad
+-Puntuacion
+}
+
+Juego-- "2...n" Equipo
+
+Equipo "many" o-- "1" Entrenador
+
+@enduml
+
+@startuml Diagrama de objetos
+
+object "Venezuela : Equipo" as VE{
+Nombre = "Vinotinto"
+Registro = ""
+Capitan = "Luis"
+}
+object "Colombia : Equipo" as CO{
+Nombre = "Colombia"
+Registro = ""
+Capitan = "Carlos"
+
+}
+
+object "Jugador1 : Jugador" as J1{
+Nombre = "Mamerto"
+Telefono = +58
+Direccion = "Caracas"
+Numero = 10
+Posicion = Defensa
+}
+object "Jugador2 : Jugador" as J2{
+Nombre = "Robert"
+Telefono = +57
+Direccion = "Barranquilla"
+Numero = 10
+Posicion = Central
+}
+object "Jugador3 : Jugador" as J3{
+Nombre = "Carlos"
+Telefono = +57
+Direccion = "Barranquilla"
+Numero = 07
+Posicion = Defensa
+}
+object "Jugador4 : Jugador" as J4{
+Nombre = "Luis"
+Telefono = +58
+Direccion = "Caracas"
+Numero = 07
+Posicion = Central
+}
+object "Entrenador1 : Entrenador" as E1{
+Nombre = "Rigoberto"
+Telefono = +58
+Direccion = "Caracas"
+Años_de_exp = 5
+Acreditacion = "true"
+}
+
+object "Entrenador2 : Entrenador" as E2{
+Nombre = "Pablo"
+Telefono = +57
+Direccion = "Barranquilla"
+Años_de_exp = 10
+Acreditacion = "true"
+}
+
+J1 "Juega"-- VE
+J4 "Juega"-- VE
+
+J2 "Juega"-- CO
+J3 "Juega"-- CO
+
+VE "Tiene" -- E1
+CO "Tiene" -- E2
+
+object "Juego1 : Juego" as Jg1{
+Localidad = "Cucuta"
+Puntuacion = 3-2
+}
+
+VE "Juega" -- Jg1
+CO "Juega" -- Jg1
+
+@enduml
